@@ -4,13 +4,60 @@
 
 @import "bootstrap/bootstrap";
 
+@font-face {
+       font-family: "Cachet Bold";
+     src: url('http://campweaver.org/assets//fonts/Cachet-Bold.ttf') format("truetype");
+}
+@font-face {
+       font-family: "Cachet_Book";
+     src: url('http://campweaver.org/assets//fonts/Cachet-Book.ttf') format("truetype");
+}
+@font-face {
+       font-family: "Cachet Medium";
+     src: url('http://campweaver.org/assets//fonts/Cachet-Medium.ttf') format("truetype");
+   }
+
 /* ==========================================================================
    Variables
    ========================================================================== */
-
+@white:                #fff;
+@black:                #000;
 @brand-primary:        #01a38e;
 @brand-secondary:      #117cc2;
 
+@font-ymca: 'Cachet Medium', Roboto, Arial, sans-serif;
+
+@navbar-default-color:             @black;
+@navbar-default-bg:                #f0f0f0;
+@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+@navbar-btn-border-color:          #cccccc;
+
+@btn-secondary-color:            #fff;
+@btn-secondary-bg:               @brand-secondary;
+@btn-secondary-border:           darken(@btn-secondary-bg, 5%);
+
+@font-family-sans-serif:  'Cachet Medium', Roboto, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+
+.btn-secondary{
+  .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+}
+.btn-navbar-join{
+  .button-variant(@navbar-default-color; @navbar-default-bg; @navbar-btn-border-color);
+}
+
+.sevenths{
+  position: relative;
+  min-height: 1px;
+  width: 14.287%;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+}
 
 /* ==========================================================================
    Base
@@ -29,21 +76,115 @@ body { }
 }
 .info-bar{
   background: @brand-secondary;
+  height: 40px;
+  .row{
+    .col-sm-4{
+      min-height: 0;
+    }
+  }
+}
+.header-container{
+  .container;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .header-brand{
   img{
+    max-height: 150px;
     .img-responsive;
   }
 }
+.header-title{
+  color: @brand-primary;
+  font-size: 46px;
+  font-family: @font-ymca;
+  text-align: center;
+}
+.header-btns{
+  display: block;
+  width: 225px;
+  margin-left: auto;
+  margin-right: auto;
+  .btn{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+/* Social */
+.social-icons{
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  background-repeat: no-repeat;
+  margin: 2px;
+}
+.twitter{
+  background: url(../img/twitter.png);
+  .social-icons;
+}
+.facebook{
+  background: url(../img/facebook.png);
+  .social-icons;
+}
+.linkedin{
+  background: url(../img/linkedin.png);
+  .social-icons;
+}
+.youtube{
+  background: url(../img/youtube.png);
+  .social-icons;
+}
+.plus{
+  background: url(../img/plus.png);
+  .social-icons;
+}
+.phone{
+  color: @white;
+  font-size: 20px;
+  line-height: 40px;
+  vertical-align: middle;
+  .pull-right;
+  &:hover{
+    color: darken(@white, 5%);
+    text-decoration: none;
+  }
+  &:focus{
+    color: darken(@white, 5%);
+    text-decoration: none;
+  }
+  &:active{
+    color: darken(@white, 5%);
+    text-decoration: none;
+  }
+}
+/* Navbar */
 
-
+.navbar-ymca{
+  .navbar-default;
+  border-bottom: 2px solid #cccccc;
+}
 
 /* ==========================================================================
    Content
    ========================================================================== */
 
 .content { }
-
+.branch-title{
+  text-align: center;
+}
+.branch-address{
+  margin-top: 0;
+  line-height: 12px;
+  text-align: center;
+  font-size: 12px;
+}
+.carousel{
+  color: @white;
+  background: @brand-primary;
+  a{
+    color: @white;
+  }
+}
 
 
 /* ==========================================================================
@@ -82,6 +223,14 @@ body { }
    ========================================================================== */
 
 .content-info { }
+.copyright{
+  padding-top: 5px;
+  color: @white;
+  background: @brand-secondary;
+  a{
+    color: @white;
+  }
+}
 
 
 

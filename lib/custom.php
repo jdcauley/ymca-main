@@ -2,30 +2,55 @@
 /**
  * Custom functions
  */
+
+function ymca_branches() {
+  register_post_type( 'branches',
+		array(
+			'labels' => array(
+				'name' => __( 'YMCA Branches' ),
+				'singular_name' => __( 'YMCA Branch Posts' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'supports' => array('title','thumbnail', 'custom-fields'),
+		'taxonomies' => array('category'),
+		)
+	);
+}
+add_action( 'init', 'ymca_branches' );
+
+
+/* Customizer */
+
 function ymca_main_customize_register($wp_customize){
 
-    $wp_customize->add_section('ymca_main_settings', array(
-        'title'    => __('Theme Settings', 'ymca_main'),
+    $wp_customize->add_section('ymca_logo_settings', array(
+        'title'    => __('Site Logo', 'ymca_main'),
         'priority' => 120,
     ));
 
+    $wp_customize->add_section('ymca_social_settings', array(
+        'title'    => __('Social Links', 'ymca_main'),
+        'priority' => 120,
+    ));
+    
     //  =============================
-    //  = Logo Upload              =
+    //  = Site Logo                 =
     //  =============================
-
-    $wp_customize->add_setting( 'ymca_main_logo_upload' );
+    $wp_customize->add_setting( 'ymca_main_logo' );
 
     $wp_customize->add_control(
       new WP_Customize_Image_Control(
         $wp_customize,
-        'img-upload',
+        'ymca_main_logo',
           array(
             'label' => 'Logo Upload',
-            'section' => 'ymca_main_settings',
-            'settings' => 'ymca_main_logo_upload'
+            'section' => 'ymca_logo_settings',
+            'settings' => 'ymca_main_logo'
           )
         )
       );
+
 
     //  =============================
     //  = Social Links              =
@@ -37,7 +62,7 @@ function ymca_main_customize_register($wp_customize){
 
     $wp_customize->add_control('ymca_main_twitter', array(
         'label'      => 'Twitter URL',
-        'section'    => 'ymca_main_settings',
+        'section'    => 'ymca_social_settings',
         'settings'   => 'ymca_main_twitter',
     ));
 
@@ -47,7 +72,7 @@ function ymca_main_customize_register($wp_customize){
 
     $wp_customize->add_control('ymca_main_facebook', array(
         'label'      => 'Facebook URL',
-        'section'    => 'ymca_main_settings',
+        'section'    => 'ymca_social_settings',
         'settings'   => 'ymca_main_facebook',
     ));
 
@@ -57,7 +82,7 @@ function ymca_main_customize_register($wp_customize){
 
     $wp_customize->add_control('ymca_main_linkedin', array(
         'label'      => 'Linkedin URL',
-        'section'    => 'ymca_main_settings',
+        'section'    => 'ymca_social_settings',
         'settings'   => 'ymca_main_linkedin',
     ));
 
@@ -67,7 +92,7 @@ function ymca_main_customize_register($wp_customize){
 
     $wp_customize->add_control('ymca_main_youtube', array(
         'label'      => 'Youtube URL',
-        'section'    => 'ymca_main_settings',
+        'section'    => 'ymca_social_settings',
         'settings'   => 'ymca_main_youtube',
     ));
 
@@ -77,9 +102,21 @@ function ymca_main_customize_register($wp_customize){
 
     $wp_customize->add_control('ymca_main_plus', array(
         'label'      => 'Google+ URL',
-        'section'    => 'ymca_main_settings',
+        'section'    => 'ymca_social_settings',
         'settings'   => 'ymca_main_plus',
     ));
+
+    $wp_customize->add_setting('ymca_main_phone', array(
+        'default'        => '',
+    ));
+
+    $wp_customize->add_control('ymca_main_phone', array(
+        'label'      => 'Header Phone Number',
+        'section'    => 'ymca_social_settings',
+        'settings'   => 'ymca_main_phone',
+    ));
+
+  /*
 
     //  =============================
     //  = Radio Input               =
@@ -178,6 +215,7 @@ function ymca_main_customize_register($wp_customize){
         'settings'   => 'ymca_main_theme_options[page_test]',
     ));
 
+  */
 }
 
 add_action('customize_register', 'ymca_main_customize_register');

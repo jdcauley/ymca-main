@@ -1,7 +1,7 @@
 <header class="banner" role="banner">
   <div class="alert-bar"></div>
-  <div class="container">
-    <div class="info-bar">
+  <div class="info-bar">
+    <div class="container">
       <div class="row">
         <div class="col-sm-4">
           <?php if ( get_theme_mod('ymca_main_twitter') ) : ?>
@@ -19,25 +19,36 @@
           <?php if ( get_theme_mod('ymca_main_plus') ) : ?>
             <a class="plus" title="plus" href="<?php echo get_theme_mod('ymca_main_plus'); ?>"></a>
           <?php endif; ?>
-
         </div>
         <div class="col-sm-4"></div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-4 col-sm-offset-4">
+          <?php if ( get_theme_mod('ymca_main_phone') ) : ?>
+            <a class="phone" title="phone number" href="tel:<?php echo get_theme_mod('ymca_main_phone'); ?>"><?php echo get_theme_mod('ymca_main_phone'); ?></a>
+          <?php endif; ?>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="header-container">
     <div class="row">
       <div class="col-sm-6">
-        <?php if ( get_theme_mod('ymca_main_logo_upload') ) : ?>
-        <a class="header-brand" href="<?php echo home_url(); ?>/"><img alt="<?php bloginfo('name'); ?>" src="<?php echo get_theme_mod('ymca_main_logo_upload'); ?>"></a>
+        <?php if ( get_theme_mod('ymca_main_logo') ) : ?>
+        <a class="header-brand" href="<?php echo home_url(); ?>/"><img alt="<?php bloginfo('name'); ?>" src="<?php echo get_theme_mod('ymca_main_logo'); ?>"></a>
         <?php else: ?>
         <a class="header-brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
         <?php endif; ?>
       </div>
-      <div class="col-sm-6"></div>
+      <div class="col-sm-6">
+        <h1 class="header-title"><?php bloginfo('name'); ?></h1>
+        <div class="header-btns">
+          <a class="btn btn-secondary" href="#">Give to the Y</a>
+          <a class="btn btn-primary" href="#">Join the Y</a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="navbar navbar-default">
+  <div class="navbar navbar-ymca">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -49,9 +60,10 @@
       </div>
 
       <nav class="collapse navbar-collapse" role="navigation">
+        <a href="#" class="btn btn-navbar-join pull-left navbar-btn" title="Join">Join</a>
         <?php
           if (has_nav_menu('primary_navigation')) :
-            wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
+            wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav navbar-right'));
           endif;
         ?>
       </nav>
