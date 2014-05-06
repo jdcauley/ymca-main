@@ -33,7 +33,7 @@ function ymca_main_customize_register($wp_customize){
         'title'    => __('Social Links', 'ymca_main'),
         'priority' => 120,
     ));
-    
+
     //  =============================
     //  = Site Logo                 =
     //  =============================
@@ -114,6 +114,16 @@ function ymca_main_customize_register($wp_customize){
         'label'      => 'Header Phone Number',
         'section'    => 'ymca_social_settings',
         'settings'   => 'ymca_main_phone',
+    ));
+
+    $wp_customize->add_setting('ymca_main_btn_menu_title', array(
+        'default'        => '',
+    ));
+
+    $wp_customize->add_control('ymca_main_btn_menu_title', array(
+        'label'      => 'Button Menu Title',
+        'section'    => 'ymca_social_settings',
+        'settings'   => 'ymca_main_btn_menu_title',
     ));
 
   /*

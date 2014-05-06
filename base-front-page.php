@@ -46,35 +46,23 @@
     </section>
 
     <section class="carousel">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12"></div>
-        </div>
-      </div>
+      <?php dynamic_sidebar('home-carousel'); ?>
     </section>
 
     <section class="learnmore">
       <div class="container">
         <div class="row">
-          <div class="col-sm-3">
-          <?php if ( get_theme_mod('ymca_btn_link_1') ) : ?>
-            <a class="btn btn-default" title="twitter" href="<?php echo get_theme_mod('ymca_btn_link_1'); ?>"><?php echo get_theme_mod('ymca_btn_text_1'); ?></a>
-          <?php endif; ?>
+          <div class="col-lg-12">
+            <?php if ( get_theme_mod('ymca_main_btn_menu_title') ) : ?>
+            <h3><?php echo get_theme_mod('ymca_main_btn_menu_title'); ?>"</h3>
+            <?php endif; ?>
           </div>
-          <div class="col-sm-3">
-          <?php if ( get_theme_mod('ymca_btn_link_2') ) : ?>
-            <a class="btn btn-secondary" title="twitter" href="<?php echo get_theme_mod('ymca_btn_link_2'); ?>"><?php echo get_theme_mod('ymca_btn_text_2'); ?></a>
-          <?php endif; ?>
-          </div>
-          <div class="col-sm-3">
-          <?php if ( get_theme_mod('ymca_btn_link_3') ) : ?>
-            <a class="btn btn-default" title="twitter" href="<?php echo get_theme_mod('ymca_btn_link_3'); ?>"><?php echo get_theme_mod('ymca_btn_text_3'); ?></a>
-          <?php endif; ?>
-          </div>
-          <div class="col-sm-3">
-          <?php if ( get_theme_mod('ymca_btn_link_4') ) : ?>
-            <a class="btn btn-primary" title="twitter" href="<?php echo get_theme_mod('ymca_btn_link_4'); ?>"><?php echo get_theme_mod('ymca_btn_text_4'); ?></a>
-          <?php endif; ?>
+          <div class="col-lg-12">
+            <?php
+              if (has_nav_menu('button_navigation')) :
+                wp_nav_menu(array('theme_location' => 'button_navigation', 'menu_class' => 'btn-menu'));
+              endif;
+            ?>
           </div>
         </div>
       </div>

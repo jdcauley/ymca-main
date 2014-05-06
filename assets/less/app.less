@@ -36,6 +36,18 @@
 @btn-secondary-bg:               @brand-secondary;
 @btn-secondary-border:           darken(@btn-secondary-bg, 5%);
 
+@btn-two-bg:                     #00a3e0;
+@btn-two-border:                 darken(@btn-two-bg, 5%);
+
+@btn-three-bg:                   #00b6fa;
+@btn-three-border:               darken(@btn-two-bg, 5%);
+
+@btn-four-bg:                    #00d0cd;
+@btn-four-border:                darken(@btn-two-bg, 5%);
+
+@btn-five-bg:                    #21bdbc;
+@btn-five-border:                darken(@btn-two-bg, 5%);
+
 @font-family-sans-serif:  'Cachet Medium', Roboto, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 
@@ -172,20 +184,65 @@ body { }
 .branch-title{
   text-align: center;
 }
+.branches{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.learnmore{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .branch-address{
   margin-top: 0;
   line-height: 12px;
   text-align: center;
   font-size: 12px;
 }
-.carousel{
-  color: @white;
-  background: @brand-primary;
-  a{
-    color: @white;
+
+.btn-menu{
+  padding: 0;
+  margin: 0;
+  display: table;
+  list-style: none;
+  width: 100%;
+  li{
+    display: table-cell;
+    text-align: center;
+    &:first-child{
+      a{
+        .btn-secondary;
+      }
+    }
+    &:nth-child(2){
+      a{
+        .button-variant(@white; @btn-two-bg; @btn-two-border);
+      }
+    }
+    &:nth-child(3){
+      a{
+        .button-variant(@white; @btn-three-bg; @btn-three-border);
+      }
+    }
+    &:nth-child(4){
+      a{
+        .button-variant(@white; @btn-four-bg; @btn-four-border);
+      }
+    }
+    &:nth-child(5){
+      a{
+        .button-variant(@white; @btn-five-bg; @btn-five-border);
+      }
+    }
+    &:last-child{
+      a{
+        .btn-primary;
+      }
+    }
+    a{
+      .btn;
+    }
   }
 }
-
 
 /* ==========================================================================
    Primary Content
@@ -221,8 +278,40 @@ body { }
 /* ==========================================================================
    Footer
    ========================================================================== */
-
 .content-info { }
+.universal-menu{
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: table;
+  list-style: none;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  li{
+    display: table-cell;
+    text-align: center;
+    a{
+      color: @black;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+    }
+  }
+}
+.universal-footer{
+  margin-top: 40px;
+  h4{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+  }
+  p{
+    margin-top: 0;
+    line-height: 12px;
+    text-align: center;
+  }
+}
 .copyright{
   padding-top: 5px;
   color: @white;
@@ -231,7 +320,6 @@ body { }
     color: @white;
   }
 }
-
 
 
 /* ==========================================================================
