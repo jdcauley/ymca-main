@@ -1,6 +1,15 @@
 <header class="banner" role="banner">
-  <div class="alert-bar"></div>
-  <div class="info-bar">
+  <section class="alert-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 alert-col">
+          <?php if ( dynamic_sidebar('alert-widget') ) ; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-bar">
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
@@ -28,7 +37,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <div class="header-container">
     <div class="row">
       <div class="col-sm-6">

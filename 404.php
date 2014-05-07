@@ -10,4 +10,6 @@
   <li><?php _e('an out-of-date link', 'roots'); ?></li>
 </ul>
 
+<?php dynamic_sidebar('404-widget'); ?>
+
 <?php get_search_form(); ?>

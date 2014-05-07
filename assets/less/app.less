@@ -24,6 +24,7 @@
 @black:                #000;
 @brand-primary:        #01a38e;
 @brand-secondary:      #117cc2;
+@alert-bg:             #fe0005;
 
 @font-ymca: 'Cachet Medium', Roboto, Arial, sans-serif;
 
@@ -85,6 +86,20 @@ body { }
 
 .banner{
 
+}
+.alert-bar{
+  padding-bottom: 20px;
+  font-family: arial, sans-serf;
+  color: @white;
+  text-align: center;
+  background: @alert-bg;
+  a{
+    color: @white;
+    text-decoration: underline;
+  }
+}
+.alert-col{
+  min-height: 0;
 }
 .info-bar{
   background: @brand-secondary;

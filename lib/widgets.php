@@ -4,6 +4,16 @@
  */
 function roots_widgets_init() {
   // Sidebars
+
+  register_sidebar(array(
+    'name'          => __('Alert Widget', 'roots'),
+    'id'            => 'alert-widget',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ));
+
   register_sidebar(array(
     'name'          => __('Primary', 'roots'),
     'id'            => 'sidebar-primary',
@@ -43,6 +53,15 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Footer Right', 'roots'),
     'id'            => 'footer-right',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ));
+
+  register_sidebar(array(
+    'name'          => __('404 Page', 'roots'),
+    'id'            => '404-widget',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
