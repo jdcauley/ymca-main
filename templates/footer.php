@@ -15,6 +15,7 @@
 </section>
 <section class="universal-footer">
   <div class="container">
+    <hr>
     <div class="row">
       <div class="col-lg-12">
         <p>The mission of the YMCA of Greensboro is to put Judeo-Christian principles into practice through programs that build a healthy spirit, mind, and body for all.</p>
