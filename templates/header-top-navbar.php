@@ -59,17 +59,7 @@
 
   <div class="navbar navbar-ymca">
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-
-      <nav class="collapse navbar-collapse" role="navigation">
-        <a href="#" class="btn btn-navbar-join pull-left navbar-btn" title="Join">Join</a>
+      <nav class="">
         <?php
           if (has_nav_menu('primary_navigation')) :
             wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav navbar-right'));
